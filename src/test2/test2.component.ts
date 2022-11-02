@@ -1,22 +1,36 @@
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { TailwindElement } from "../shared/tailwind.element";
+import { SIZE, VARIANT } from './defs';
+import { classMap } from 'lit/directives/class-map.js';
 
 import style from "./test2.component.scss";
+@customElement('dwc-button')
+export class DWCButton extends TailwindElement(style) {
 
-@customElement("test2-component")
-export class Test2Component extends TailwindElement(style) {
-  @property()
-  name?: string = "World";
+  @property({ reflect: true })
+  size = SIZE.MEDIUM;
 
-  render() {
-    return html`
-      <p>
-        Hello,
-        <b>${this.name}</b>
-        !
-      </p>
-      <button class="bg-orange-200 text-violet-700 p-4 rounded-full text-2xl">Hello world!</button>
-    `;
+  @property({ reflect: true })
+  variant = VARIANT.PRIMARY;
+
+  override render() {
+    const { size, variant } = this;
+
+    const classes = classMap({
+      [`dwc-button`]: true,
+      [`dwc-button--${variant}`]: variant,
+      [`dwc-button--${size}`]: size,
+    });
+
+    return html`<button id="button" part="button" class="${classes}">
+  <slot></slot>
+</button>`;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'dwc-button': DWCButton;
   }
 }

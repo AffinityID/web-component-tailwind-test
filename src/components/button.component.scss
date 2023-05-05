@@ -1,0 +1,54 @@
+/* Default */
+.dwc-button {
+  @apply inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+}
+
+/* Variants */
+.dwc-button--primary {
+  @apply rounded-md border-transparent bg-indigo-600 text-white shadow-sm hover:bg-indigo-700;
+}
+
+.dwc-button--secondary {
+  @apply rounded-md border-transparent bg-indigo-100 text-indigo-700 hover:bg-indigo-200;
+}
+
+.dwc-button--white {
+  @apply rounded-md border-gray-300 bg-white text-gray-700 shadow-sm hover:bg-gray-50;
+}
+
+.dwc-button--round {
+  @apply rounded-full border-transparent bg-indigo-600 text-white shadow-sm hover:bg-indigo-700;
+}
+
+/* Sizes */
+.dwc-button--xs {
+  @apply px-2.5 py-1.5 text-xs font-medium;
+}
+
+.dwc-button--sm {
+  @apply px-3 py-2 text-sm font-medium leading-4;
+}
+
+.dwc-button--md {
+  @apply px-4 py-2 text-sm font-medium;
+}
+
+.dwc-button--lg {
+  @apply px-4 py-2 text-base font-medium;
+}
+
+.dwc-button--xl {
+  @apply px-6 py-3 text-base font-medium;
+}
+
+.dwc-button--round.dwc-button--xs {
+  @apply px-3 py-1.5;
+}
+
+.dwc-button--round.dwc-button--sm {
+  @apply px-3.5 py-2;
+}
+
+.dwc-button--round.dwc-button--lg {
+  @apply px-5 py-2;
+}

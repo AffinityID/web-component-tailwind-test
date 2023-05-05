@@ -1,12 +1,38 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
     "useDefineForClassFields": false,
-    "baseUrl": "src"
+    "outDir": "./dist",
+    "baseUrl": "src",
+    "target": "es2015",
+    "module": "es2015",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
-  "include": ["src"]
+  "include": [
+    "src/components/*.ts",
+    "index.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "docs",
+    "node_modules",
+    "tmp"
+  ],
+  "plugins": [
+    {
+      "name": "ts-lit-plugin",
+      "strict": true,
+      "rules": {
+        "no-unknown-tag-name": "off",
+        "no-unknown-event": "warn"
+      }
+    }
+  ]
 }
